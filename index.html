@@ -3,23 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portofolio Web Manpro</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Halo Universe</h1>
-        <h2>Anggota Kelompok</h2>
-        <ul>
-            <li>Filipo Bintang Lautan 6182301004</li>
-            <li>Eric Lelipaly 6182301020</li>
-            <li>Bima Rahmadani Arifandi 6182301094</li>
-        </ul>
+    <header class="header">
+        <div class="header-content">
+            <pre class="ascii-title">
+██████╗  ██████╗ ██████╗ ████████╗ ██████╗ ███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+██████╔╝██║   ██║██████╔╝   ██║   ██║   ██║█████╗  ██║   ██║██║     ██║██║   ██║
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██║   ██║██╔══╝  ██║   ██║██║     ██║██║   ██║
+██║     ╚██████╔╝██║  ██║   ██║   ╚██████╔╝██║     ╚██████╔╝███████╗██║╚██████╔╝
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+            </pre>
+            <p class="subtitle">Manajemen Project Portfolio</p>
+        </div>
     </header>
 
-    <article> 
-        <!-- Click opsi profile per User -->
-        <!-- Misal yang ini untuk Filipo -->
-    </article>
-    
+    <main class="container">
+        <article class="bento-item profile-card profile-filipo" onclick="goToProfile('../src/porto_ipo.html')">
+            <figure>
+                <img src="assets/image/pfp_ipo.jpeg" alt="Filipo's Portfolio" class="profile-image">
+            </figure>
+            <h3>Filipo Bintang Lautan</h3>
+            <code class="NPM">6182301004</code>
+        </article>
+
+        <article class="bento-item profile-card profile-eric" onclick="goToProfile('#')">
+            <figure>
+                <img src="assets/image/defaultAvatar.jpg" alt="Eric's Portfolio" class="profile-image">
+            </figure>
+            <h3>Eric Lelipaly</h3>
+            <code class="NPM">6182301020</code>
+        </article>
+
+        <article class="bento-item profile-card profile-vince" onclick="goToProfile('#')">
+            <figure>
+                <img src="assets/image/defaultAvatar.jpg" alt="Vince's Portfolio" class="profile-image">
+            </figure>
+            <h3>Vince Farrel Natahanel</h3>
+            <code class="NPM">6182301024</code>
+        </article>
+
+        <article class="bento-item profile-card profile-bima" onclick="goToProfile('#')">
+            <figure>
+                <img src="assets/image/defaultAvatar.jpg" alt="Bima's Portfolio" class="profile-image">
+            </figure>
+            <h3>Bima Rahmadani Arifandi</h3>
+            <code class="NPM">6182301094</code>
+        </article>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2025 WomCBT. Built with passion by the Manpro Team</p>
+    </footer>
+
+    <script>
+        function goToProfile(url) {
+            if (url !== '#') {
+                window.location.href = url;
+            }
+        }
+    </script>
 </body>
 </html>
