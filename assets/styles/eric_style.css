@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #F1F3E0;
+    background-color: #1c201c;
+}
+
+#mainContainer{
+    background-color: #778873;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "prof nama"
+    "hobi keahlian";
+}
+
+
+#profileHeader{
+    grid-area: prof;
+}
+
+#profileHeader > img {
+    width: 212px;
+    height: 212px;
+    border-radius: 50%; 
+    border-width: 20px;
+    border: 5px solid #D2DCB6;
+}
+
+#nameHeader{
+    align-content: center;
+    grid-area: nama;
+}
+
+#hobiContainer{
+    grid-area: hobi;
+    align-content: center;
+}
+
+#keahlianContainer{
+    grid-area: keahlian;
+    align-content: center;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
