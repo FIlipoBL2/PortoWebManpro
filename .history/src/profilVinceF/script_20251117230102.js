@@ -24,7 +24,6 @@ function animate() {
         // Stop when slow
         if (Math.abs(velX) < 0.01) velX = 0;
         if (Math.abs(velY) < 0.01) velY = 0;
-        if (Math.abs(velX) < 0.01 && Math.abs(velY) < 0.01) autoRotate = true;
     }
     
     cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
