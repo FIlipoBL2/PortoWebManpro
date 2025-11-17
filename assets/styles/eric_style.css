@@ -15,10 +15,11 @@ body{
     border-radius: 30px;
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 200px 200px 600px;
     grid-template-areas:
     "prof nama"
-    "hobi keahlian";
+    "hobi keahlian"
+    "act act";
 }
 
 
@@ -47,6 +48,17 @@ body{
 #keahlianContainer{
     grid-area: keahlian;
     align-content: center;
+}
+
+#activityContainer{
+    grid-area: act;
+    align-content: center;
+}
+
+#activityContainer > img{
+    height: 500px;
+    width: auto;
+    object-fit: cover;
 }
 
 ul{
