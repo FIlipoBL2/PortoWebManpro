@@ -1,0 +1,62 @@
+body {
+    background-color: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 800px;
+    margin: 100px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 6s infinite linear;
+}
+
+.cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../assets/image/pfp_vin.jpg);
+}
+
+/* Faces of the cube */
+  .front  { transform: rotateY(0deg) translateZ(110px);  background-image: url("img1.jpg"); }
+  .back   { transform: rotateY(180deg) translateZ(110px); background-image: url("img2.jpg"); }
+  .right  { transform: rotateY(90deg) translateZ(110px);  background-image: url("img3.jpg"); }
+  .left   { transform: rotateY(-90deg) translateZ(110px); background-image: url("img4.jpg"); }
+  .top    { transform: rotateX(90deg) translateZ(110px);  background-image: url("img5.jpg"); }
+  .bottom { transform: rotateX(-90deg) translateZ(110px); background-image: url("img6.jpg"); }
+
+@keyframes rotateCube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to   { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.faceImg {
+    margin-bottom: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "cat cont";
+}
+
+.categories {
+    grid-area: cat;
+}
+
+.description {
+    grid-area: cont;
+}
