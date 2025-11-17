@@ -1,0 +1,21 @@
+body{
+    background-image: url("../image/39kuraito.jpg");
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#porto{
+    background-color: white;
+    color: black;
+}
+
+#hobi{
+    margin: 20px;
+}
+#keahlian{
+    margin: 20px;
+}

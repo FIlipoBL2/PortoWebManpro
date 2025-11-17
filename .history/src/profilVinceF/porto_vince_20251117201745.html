@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Vince F</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="categories">Hobi<br>Keahlian<br>Aktivitas Terakhir</div>
+        <div class="description"></div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    margin: 0;
+  }
+
+  .scene {
+    width: 220px;
+    height: 220px;
+    perspective: 900px;
+    cursor: grab;
+  }
+
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+  }
+
+  .cube div {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .front  { transform: rotateY(0deg) translateZ(110px);  background-image: url("img1.jpg"); }
+  .back   { transform: rotateY(180deg) translateZ(110px); background-image: url("img2.jpg"); }
+  .right  { transform: rotateY(90deg) translateZ(110px);  background-image: url("img3.jpg"); }
+  .left   { transform: rotateY(-90deg) translateZ(110px); background-image: url("img4.jpg"); }
+  .top    { transform: rotateX(90deg) translateZ(110px);  background-image: url("img5.jpg"); }
+  .bottom { transform: rotateX(-90deg) translateZ(110px); background-image: url("img6.jpg"); }
+</style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="cube" id="cube">
+      <div class="front"></div>
+      <div class="back"></div>
+      <div class="right"></div>
+      <div class="left"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+
+<script>
+  const cube = document.getElementById("cube");
+  let rotX = 20, rotY = 20;
+  let autoRotate = true;
+  let isDragging = false;
+  let lastX, lastY;
+  let idleTimer;
+
+  // Auto rotation loop
+  function animate() {
+    if (autoRotate) {
+      rotY += 0.3;
+      rotX += 0.15;
+      cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Stop auto rotation on drag
+  cube.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    autoRotate = false;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+
+    // Restart auto rotation after 2 seconds of idling
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => autoRotate = true, 2000);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const deltaX = e.clientX - lastX;
+    const deltaY = e.clientY - lastY;
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    rotY += deltaX * 0.5;
+    rotX -= deltaY * 0.5;
+
+    cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  });
+</script>
+
+</body>
+</html>
